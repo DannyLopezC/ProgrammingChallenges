@@ -1,25 +1,32 @@
-i = 900
-j = 1000
-c = i
+#given range
+i = int(input())
+j = int(input())
+#C is the current number that will be evaluating
+currentNumber = i
+#list of cycle lengths
 counters = []
-while c <= j:
-    n = c
+
+while currentNumber <= j:
+    n = currentNumber
     counter = 1
     while not n == 1:
         counter += 1
-        """ print(str(n) + " ", end='') """
+
         if n % 2 == 0:
             n = int(n/2)
         else:
             n = int((n*3) + 1)
-    c += 1
-    """ print(n) """
+    currentNumber += 1
+
     counters.append(counter)
-    """ print(counter) """
 
 counters.sort(reverse=True)
-maxCounter = counters[0]
 
-print(str(i) + " ", end='')
-print(str(j) + " ", end='')
-print(str(maxCounter) + " ", end='')
+if j < i:
+    print("Error", j, "is less than", i)
+else:
+    maxCounter = counters[0]
+    print(str(i) + " ", end='')
+    print(str(j) + " ", end='')
+    print(str(maxCounter) + " ", end='')
+

@@ -2,11 +2,11 @@ height = 1
 length = 1
 square = '.'
 mine = "*"
-""" fields made counter """
+#fields made counter
 counter = 0
 SolvedBoards = []
 
-""" constructs the board """
+#constructs the board
 def constructBoard(h):
     for _ in range(h):
         x = list(map(str, input().split()))
@@ -91,7 +91,7 @@ def printMinesweeperSolved(k):
             print(SolvedBoards[k][i][j], end='')
 
 
-""" it finish when height and lenght are 0 """
+#it finish when height and lenght are 0
 while height != 0 and length != 0:
     counter += 1
     board = []
